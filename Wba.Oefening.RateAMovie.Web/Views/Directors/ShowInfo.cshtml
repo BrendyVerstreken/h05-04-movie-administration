@@ -1,0 +1,13 @@
+﻿@model DirectorsShowInfoViewModel
+
+<h2>@Model.Name</h2>
+<div class="list-group">
+    @for(int i = 0; i < Model.Movies.Count();i++)
+    {
+        <div class="list-group-item-info"><a asp-controller="Movies"
+                                             asp-action="Info"
+                                             asp-route-Id="@Model.MovieIds.ToArray()[i]"
+                                             class="alert-link">@Model.Movies.ToArray()[i]</a></div>
+    }
+</div>
+

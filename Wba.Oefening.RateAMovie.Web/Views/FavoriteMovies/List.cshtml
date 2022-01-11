@@ -1,0 +1,19 @@
+﻿@model List<FavoriteMoviesViewModel>
+
+
+<h2>My favorite movies</h2>
+<table class="table table-responsive table-hover">
+    <tr>
+        <th>Title</th>
+    </tr>
+    @foreach(var movie in Model)
+    { 
+        <tr>
+            <td>@movie.Title</td>
+            <td><a asp-controller="FavoriteMovies"
+       asp-action="Remove"
+       asp-route-id="@movie.Id" class="btn btn-danger">Remove</a></td>
+            </tr>
+    }
+</table>
+
